@@ -1,2 +1,5 @@
 node_modules/
 src/*.js.map
+*.js.map
+src/modules/**/*.js
+src/*.js
