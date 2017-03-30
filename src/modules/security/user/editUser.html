@@ -1,0 +1,11 @@
+<page *ngIf="user">
+    <page-header>Edit User</page-header>
+    <page-content>
+        <horizontal-form>
+            <form-input label="First Name" [value]="user.firstName"></form-input>
+            <form-input label="Last Name" [value]="user.lastName"></form-input>
+            <form-button-primary label="Save" (onClick)="onSaveClicked()"></form-button-primary>
+            <form-button-default label="Cancel" (onClick)="onCancelClicked()"></form-button-default>
+        </horizontal-form>
+    </page-content>
+</page>

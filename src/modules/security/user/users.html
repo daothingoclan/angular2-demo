@@ -1,0 +1,24 @@
+<page>
+  <page-header>Users</page-header>
+  <page-content>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{user.firstName}}</td>
+          <td>{{user.lastName}}</td>
+          <td><a href="#" onclick="return false;" (click)="onEditUserClicked(user);">Edit</a>
+        </tr>
+      </tbody>
+    </table>
+
+    <user-summary *ngIf="selectedUser" [(firstName)]="selectedUser.firstName"></user-summary>
+
+  </page-content>
+</page>
