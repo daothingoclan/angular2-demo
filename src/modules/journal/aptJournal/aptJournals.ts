@@ -1,4 +1,6 @@
 import {Component} from "@angular/core";
+import aptJournalHelper from "../_share/helpers/aptJournalHelper";
+
 @Component({
     templateUrl: "src/modules/journal/aptJournal/aptJournals.html"
 })
@@ -15,13 +17,22 @@ export class AptJournals {
         this.patientId = patientId;
         this.loadAptJournals(patientId);
     }
+
     private loadAptJournals(patientId: string) {
-        let self = this;
         let iaptJournalService = window.ioc.resolve("IAptJournalService");
         iaptJournalService.getAptsByPatient(patientId).subscribe(
             (aptJournals: Array<any>) => {
-                self.aptJournals = aptJournals;
+                this.loadAptJournalDone(aptJournals);
             }
         );
+    }
+
+    private loadAptJournalDone(aptJournals: Array<any>) {
+        let self = this;
+        aptJournals.forEach(item => {
+            item.html = aptJournalHelper.convertDataToHtml(item.journal.data);
+        });
+        self.aptJournals = aptJournals;
+        console.log(self.aptJournals);
     }
 }
