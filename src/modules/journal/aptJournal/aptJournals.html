@@ -1,6 +1,12 @@
 <page>
     <page-header>Apt-Journals</page-header>
     <page-content>
-        <div>This is a apt-journals</div>
+        <div class="parentScroll">
+            <div *vsFor="aptJournals; size:getSize; let _aptJournals = vsCollection">
+                <div *ngFor="let journal of _aptJournals">
+                    {{journal.id}}
+                </div>
+            </div>
+        </div>
     </page-content>
 </page>

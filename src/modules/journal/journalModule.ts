@@ -8,9 +8,11 @@ import { AptJournals } from "./aptJournal/aptJournals";
 import { JournalRoutes } from "./journalRoutes";
 import { PatientNavigator } from "../journal/_share/components/patientNavigator";
 
+import { VsFor } from './_share/components/ng2-vs-for';
+
 @NgModule({
     imports: [BrowserModule, FormsModule, HttpModule, CommonModule, JournalRoutes],
-    declarations: [DefaultPage, AptJournals, PatientNavigator],
+    declarations: [DefaultPage, AptJournals, PatientNavigator, VsFor],
     bootstrap: [DefaultPage],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
     providers: []
