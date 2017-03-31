@@ -3,7 +3,7 @@
         <button class="col-md-1 col-sm-3 col-xs-6" (click)="prePaitent()">Prev</button>
         <div class="col-md-3 col-sm-6 col-xs-12">
             <select class="form-control" [(ngModel)]="currentPatientId" (change)="onChanged($event)">
-                <option *ngFor="let patient of patients" [value]="patient.Id">{{patient.name}}</option>
+                <option *ngFor="let patient of patients" [value]="patient.id">{{patient.name}}</option>
             </select>
         </div>
         <button class="col-md-1 col-sm-3 col-xs-6" (click)="nextPatient()">Next</button>

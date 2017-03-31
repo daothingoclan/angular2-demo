@@ -22,25 +22,14 @@ export class PatientNavigator {
         let patientService: IPatientService = window.ioc.resolve("IPatientService");
 
         patientService.getAllPatients().subscribe(
-            (patients: Array<any>) => { return self.patients = patients; });
-        // self.patients = [
-        //     {
-        //         "Id": 1,
-        //         "name": "Lan"
-        //     },
-        //     {
-        //         "Id": 2,
-        //         "name": "Lan2"
-        //     },
-        //     {
-        //         "Id": 3,
-        //         "name": "Lan3"
-        //     },
-        // ]
-        let firstIndex = 0;
-        if (self.patients.length !== 0) {
-            this.updateAndEmitCurrentPatient(firstIndex);
-        }
+            (patients: Array<any>) => {
+                self.patients = patients;
+                let firstIndex = 0;
+                if (patients.length !== 0) {
+                    this.updateAndEmitCurrentPatient(firstIndex);
+                }
+                return self.patients;
+            });
     }
 
     public nextPatient() {
@@ -57,14 +46,14 @@ export class PatientNavigator {
 
     private updateIndex() {
         for (let i = 0; i <= this.patients.length - 1; i++) {
-            if (this.patients[i].Id === parseInt(this.currentPatientId)) {
+            if (this.patients[i].id === parseInt(this.currentPatientId)) {
                 this.index = i;
             }
         }
     }
 
     private updateAndEmitCurrentPatient(index: any) {
-        this.currentPatientId = this.patients[index].Id;
+        this.currentPatientId = this.patients[index].id;
         this.onChange.emit(this.currentPatientId);
     }
 }

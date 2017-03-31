@@ -8,7 +8,7 @@
     "start": "concurrently \"npm run tsc:w\" \"npm run lite\"",
     "lite": "lite-server",
     "tsc:w": "tsc -w",
-    "tsc":"tsc"
+    "tsc": "tsc"
   },
   "keywords": [
     "angular2",
@@ -35,6 +35,7 @@
     "@angular/router": "^3.4.1",
     "@angular/upgrade": "^2.4.1",
     "core-js": "^2.4.1",
+    "lite-server": "^2.3.0",
     "reflect-metadata": "^0.1.9",
     "rxjs": "^5.0.2",
     "systemjs": "^0.19.41",
