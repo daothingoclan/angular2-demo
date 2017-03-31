@@ -2,7 +2,8 @@ import { Component } from "@angular/core";
 import aptJournalHelper from "../_share/helpers/aptJournalHelper";
 
 @Component({   
-    templateUrl: "src/modules/journal/aptJournal/aptJournals.html"
+    templateUrl: "src/modules/journal/aptJournal/aptJournals.html",
+    inputs: ['aptJournals']
 })
 
 export class AptJournals {
@@ -23,7 +24,7 @@ export class AptJournals {
         iaptJournalService.getAptsByPatient(patientId).subscribe(
             (aptJournals: Array<any>) => {
                 this.loadAptJournalDone(aptJournals);
-                console.table(aptJournals[0].journal);
+                console.table(aptJournals);
             }
         );
     }

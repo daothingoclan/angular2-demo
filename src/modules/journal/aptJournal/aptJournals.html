@@ -1,10 +1,9 @@
 <page>
     <page-header>Apt-Journals</page-header>
     <page-content>
-        <div class="parentScroll">
-            <div *vsFor="aptJournals; size:getSize; let _aptJournals = vsCollection">
-                <div *ngFor="let journal of _aptJournals">
-                    {{journal.id}}
+        <div class="parentScroll" style="max-height: 500px;overflow: auto;">
+            <div *vsFor="aptJournals; let _aptJournals = vsCollection">
+                <div *ngFor="let journal of _aptJournals" [innerHTML]="journal.html">                  
                 </div>
             </div>
         </div>
