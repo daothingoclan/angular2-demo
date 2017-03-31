@@ -9,7 +9,7 @@ import { JournalRoutes } from "./journalRoutes";
 import { PatientNavigator } from "../journal/_share/components/patientNavigator";
 
 @NgModule({
-    imports: [BrowserModule, FormsModule, CommonModule, JournalRoutes, HttpModule],
+    imports: [BrowserModule, FormsModule, HttpModule, CommonModule, JournalRoutes],
     declarations: [DefaultPage, AptJournals, PatientNavigator],
     bootstrap: [DefaultPage],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
