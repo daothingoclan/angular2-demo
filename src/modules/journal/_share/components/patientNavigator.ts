@@ -38,7 +38,7 @@ export class PatientNavigator {
         this.updateAndEmitCurrentPatient(this.index);
     }
 
-    public prePaitent() {
+    public prevPatient() {
         if (!this.currentPatientId) return;
         this.index = (this.index === 0) ? this.patients.length - 1 : --this.index;
         this.updateAndEmitCurrentPatient(this.index);
