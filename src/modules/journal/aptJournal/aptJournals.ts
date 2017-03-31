@@ -24,6 +24,7 @@ export class AptJournals {
         iaptJournalService.getAptsByPatient(patientId).subscribe(
             (aptJournals: Array<any>) => {
                 this.loadAptJournalDone(aptJournals);
+                //console.table(aptJournals);
             }
         );
     }
@@ -34,5 +35,14 @@ export class AptJournals {
             item.html = aptJournalHelper.convertDataToHtml(item.journal.data);
         });
         self.aptJournals = aptJournals;
+       // console.log(self.aptJournals);
+    }
+
+    public  getSize(item: any, index:number) {
+        let size = 300;
+         //var element = document.elem('all_items_container');
+        // element.innerHTML = item.html;
+        // size = element.clientHeight;
+        return size;
     }
 }
