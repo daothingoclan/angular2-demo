@@ -1,9 +1,9 @@
 <page>
-    <page-header>Apt-Journals</page-header>
+    <page-header>Journal Entries</page-header>
     <page-content>
-        <div *vsFor="aptJournals; autoresize:true; let _aptJournals = vsCollection" style="max-height: 500px; overflow: auto;">
+        <div *vsFor="aptJournals; autoresize:true; let _aptJournals = vsCollection" class="apt-journal">
             <div *ngFor="let journal of _aptJournals">
-                <h4><strong>{{journal.start | date: 'dd/MM/yyyy' }} By {{journal.user.initials}}</strong></h4>
+                <h4><strong>{{journal.start | date: dateFormat }} By {{journal.user.initials}}</strong></h4>
                 <div [innerHTML]="journal.html"></div>
             </div>
         </div>

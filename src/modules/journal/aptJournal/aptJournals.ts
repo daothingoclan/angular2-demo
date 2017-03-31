@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 import aptJournalHelper from "../_share/helpers/aptJournalHelper";
+import appConst from "../_share/const/apiBaseUrl";
 
 @Component({   
     templateUrl: "src/modules/journal/aptJournal/aptJournals.html",
@@ -9,6 +10,7 @@ import aptJournalHelper from "../_share/helpers/aptJournalHelper";
 export class AptJournals {
     public patientId: string;
     public aptJournals: Array<any>;
+    public dateFormat: string = appConst.formatDate;
 
     constructor() {
         this.onPatientIdChanged("95");
