@@ -29,8 +29,6 @@ function convertDataToHtml(data: any): string {
         var paragraphAttr = String.format('{0}=""', "data-paragraph");
         var inlinesHtml = getInlinesHtml(paragraph);
 
-        console.log(dataIdAttr);
-
         return String.format('<{0} {1} {2} {3} {4}>{5}</{0}>', "p", dataIdAttr, dataTagAttr, showByFilterAttr, paragraphAttr, inlinesHtml);
     }
 

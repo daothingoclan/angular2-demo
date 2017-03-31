@@ -3,7 +3,10 @@
     <page-content>
         <div class="parentScroll" style="max-height: 500px;overflow: auto;">
             <div *vsFor="aptJournals; let _aptJournals = vsCollection">
-                <div *ngFor="let journal of _aptJournals" [innerHTML]="journal.html">                  
+                <div *ngFor="let journal of _aptJournals">
+                    <h4><strong>{{journal.start | date: 'dd/MM/yyyy' }} By {{journal.user.initials}}</strong></h4>
+                    <div [innerHTML]="journal.html"></div>
+                    <br>
                 </div>
             </div>
         </div>

@@ -11,7 +11,7 @@ export class AptJournals {
     public aptJournals: Array<any>;
 
     constructor() {
-        this.onPatientIdChanged("49");
+        this.onPatientIdChanged("95");
     }
 
     public onPatientIdChanged(patientId: string) {
@@ -20,11 +20,10 @@ export class AptJournals {
     }
 
     private loadAptJournals(patientId: string) {
-        let iaptJournalService = window.ioc.resolve("IAptJournalService");
+        let iaptJournalService = window.ioc.resolve("IAptJournalService");  
         iaptJournalService.getAptsByPatient(patientId).subscribe(
             (aptJournals: Array<any>) => {
                 this.loadAptJournalDone(aptJournals);
-                console.table(aptJournals);
             }
         );
     }
@@ -35,6 +34,5 @@ export class AptJournals {
             item.html = aptJournalHelper.convertDataToHtml(item.journal.data);
         });
         self.aptJournals = aptJournals;
-        console.log(self.aptJournals);
     }
 }
