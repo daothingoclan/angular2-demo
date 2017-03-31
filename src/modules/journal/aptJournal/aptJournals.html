@@ -1,6 +1,6 @@
 <page>
     <page-header>
-        <patient-navigator (onChange)="onPatientIdChanged($event)"></patient-navigator>
+        <patient-navigator (onChange)="onPatientIdChanged($event)" [isDisabled]="isDisabled"></patient-navigator>
     </page-header>
     <page-content>
         <div *vsFor="aptJournals; autoresize:true; let _aptJournals = vsCollection" class="apt-journal">

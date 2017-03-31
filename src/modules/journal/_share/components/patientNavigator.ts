@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from "@angular/core";
+import { Component, EventEmitter, Output, Input } from "@angular/core";
 import { IPatientService } from "../../../journal/_share/services/iPatientService";
 
 @Component({
@@ -7,6 +7,7 @@ import { IPatientService } from "../../../journal/_share/services/iPatientServic
 })
 
 export class PatientNavigator {
+    @Input() isDisabled: any = false;
     @Output() onChange: EventEmitter<any> = new EventEmitter<any>();
     public onChanged() {
         this.updateIndex();
@@ -16,6 +17,7 @@ export class PatientNavigator {
     private patients: Array<any> = [];
     private currentPatientId: any;
     private index = 0;
+
 
     constructor() {
         let self = this;
@@ -32,13 +34,13 @@ export class PatientNavigator {
             });
     }
 
-    public nextPatient() {
+    public onNextPatientClicked() {
         if (!this.currentPatientId) return;
         this.index = (this.index === this.patients.length - 1) ? 0 : ++this.index;
         this.updateAndEmitCurrentPatient(this.index);
     }
 
-    public prevPatient() {
+    public onPrevPatientClicked() {
         if (!this.currentPatientId) return;
         this.index = (this.index === 0) ? this.patients.length - 1 : --this.index;
         this.updateAndEmitCurrentPatient(this.index);
