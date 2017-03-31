@@ -8,7 +8,7 @@ let appConfig = {
     ioc: [
         { name: "IConnector", mapTo: HttpConnector, lifecycle: IoCLifeCycle.Singleton },
         { name: "IUserService", mapTo: UserService, lifecycle: IoCLifeCycle.Singleton },
-        { name: "IPatientService", mapTo: PatientService, lifecycle: IoCLifeCycle.Singleton }
+        { name: "IPatientService", mapTo: PatientService, lifecycle: IoCLifeCycle.Singleton },
         { name: "IAptJournalService", mapTo: AptJournalService, lifecycle: IoCLifeCycle.Singleton }
     ]
 };
