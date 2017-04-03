@@ -7,11 +7,12 @@ import { Users } from "./user/users";
 import { UserSummary } from "./_share/components/userSummary";
 import { UserService } from "./_share/services/userService";
 import { HttpModule } from "@angular/http";
+import { CommonModule } from "@angular/common";
 import { EditUser } from "./user/editUser";
-import { CommonModule } from "src/common";
+import { AppCommonModule } from "src/common";
 
 @NgModule({
-    imports: [BrowserModule, FormsModule, HttpModule, SecurityRoutes, CommonModule],
+    imports: [BrowserModule, FormsModule, HttpModule, CommonModule, SecurityRoutes, AppCommonModule],
     declarations: [DefaultPage, Users, UserSummary, EditUser],
     bootstrap: [DefaultPage],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],

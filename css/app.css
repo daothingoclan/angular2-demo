@@ -1,8 +1,0 @@
-body{
-    overflow: hidden;
-}
-
-.apt-journal{
-    max-height: 500px; 
-    overflow: auto;
-}

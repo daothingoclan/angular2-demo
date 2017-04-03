@@ -19,4 +19,4 @@ import { FormButtonDefault } from "./components/formButtonDefault";
         , FormButtonDefault
         , FormButton]
 })
-export class CommonModule { }
+export class AppCommonModule { }

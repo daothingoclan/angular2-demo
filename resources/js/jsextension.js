@@ -320,6 +320,10 @@ Date.prototype.addSeconds = function (seconds) {
 ToString with specified format
 Code convention is not good at this time, will back to this later
 */
+Date.format = function (str, format) {
+    return new Date(str).format(format, false);
+}
+
 Date.prototype.format = function (mask, utc) {
 
     var dateFormat = function () {
