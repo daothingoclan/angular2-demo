@@ -3,7 +3,7 @@ import { BrowserModule } from "@angular/platform-browser";
 import { FormsModule } from "@angular/forms";
 import { DefaultPage } from "../../defaultPage";
 import { HttpModule } from "@angular/http";
-import { CommonModule } from "../common/commonModule";
+import { CommonModule } from "src/common";
 import { AptJournals } from "./aptJournal/aptJournals";
 import { JournalRoutes } from "./journalRoutes";
 import { PatientNavigator } from "../journal/_share/components/patientNavigator";

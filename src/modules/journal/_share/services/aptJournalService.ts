@@ -1,4 +1,4 @@
-import { IConnector } from "../../../common/connector/iconnector";
+import { IConnector } from "src/common";
 import { IAptJournalService } from "./iAptJournalService";
 import { Observable } from "rxjs";
 import appConst from "../const/apiBaseUrl";
