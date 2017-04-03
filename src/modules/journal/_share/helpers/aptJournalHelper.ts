@@ -3,13 +3,14 @@ let aptJournalHelper = {
 }
 export default aptJournalHelper;
 
-function convertDataToHtml(data: any): string {
-    let html = "";
-    var sections = data.sections;
+function convertDataToHtml(item: any): string {
+    let html = "<div id='" + item.id + "'>";
+    html += "<h4><strong>" + new Date(item.start).format("dd.mm.yyyy", false) + " By " + item.user.initials + "</strong></h4>";
+    var sections = item.journal.data.sections;
     for (var k = 0; k < sections.length; k++) {
         html += sectionToHtml(sections[k]);
     }
-    return html;
+    return html + "</div>";
 
     function sectionToHtml(section: any) {
         var htmlParagraphs = '';

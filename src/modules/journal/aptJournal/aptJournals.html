@@ -3,15 +3,13 @@
         <patient-navigator (onChange)="onPatientIdChanged($event)"></patient-navigator>
     </page-header>
     <page-content>
-        <div *vsFor="aptJournals; size:getHeightItem; let _aptJournals = vsCollection;" class="apt-journal">
+        <div *vsFor="aptJournals; let _aptJournals = vsCollection; size: getItemSize; autoresize:true;" class="apt-journal">
             <div *ngFor="let journal of _aptJournals">
-                <h4><strong>{{journal.start | date: dateFormat }} By {{journal.user.initials}}</strong></h4>
-                <div [innerHTML]="journal.html"></div>
+                <div [innerHTML]="journal.html | sanitizeHtml"></div>
                 <br>
             </div>
         </div>
+        <div id="all_items_container" style="position: absolute; top: 0px; bottom: 0px; visibility:hidden; background-color: rgba(0, 255, 33, 0.42); overflow-y: scroll; overflow-x: hidden; font-size: 11pt; padding-left: 10px; padding-right: 2px;">
+        </div>
     </page-content>
 </page>
-<div id="item_height_container" style="position: absolute; top: 0px; bottom: 0px;  
-background-color: rgba(0, 255, 33, 0.42); overflow-y: scroll; overflow-x: hidden; font-size: 11pt; padding-left: 10px; padding-right: 2px;">
-</div>

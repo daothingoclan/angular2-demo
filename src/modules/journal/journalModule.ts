@@ -3,16 +3,18 @@ import { BrowserModule } from "@angular/platform-browser";
 import { FormsModule } from "@angular/forms";
 import { DefaultPage } from "../../defaultPage";
 import { HttpModule } from "@angular/http";
-import { CommonModule } from "../common/commonModule";
+import { CommonModule } from "@angular/common";
+import { AppCommonModule } from "../common/commonModule";
 import { AptJournals } from "./aptJournal/aptJournals";
 import { JournalRoutes } from "./journalRoutes";
 import { PatientNavigator } from "../journal/_share/components/patientNavigator";
+import {SanitizeHtmlPipe} from "../common/customPipes/SanitizeHtmlPipe";
 
 import { VsFor } from './_share/components/ng2-vs-for';
 
 @NgModule({
-    imports: [BrowserModule, FormsModule, HttpModule, CommonModule, JournalRoutes],
-    declarations: [DefaultPage, AptJournals, PatientNavigator, VsFor],
+    imports: [BrowserModule, FormsModule, HttpModule, CommonModule, AppCommonModule, JournalRoutes],
+    declarations: [DefaultPage, AptJournals, PatientNavigator, VsFor, SanitizeHtmlPipe],
     bootstrap: [DefaultPage],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
     providers: []
