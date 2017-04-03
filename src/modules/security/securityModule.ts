@@ -8,7 +8,7 @@ import { UserSummary } from "./_share/components/userSummary";
 import { UserService } from "./_share/services/userService";
 import { HttpModule } from "@angular/http";
 import { EditUser } from "./user/editUser";
-import { CommonModule } from "../common/commonModule";
+import { CommonModule } from "src/common";
 
 @NgModule({
     imports: [BrowserModule, FormsModule, HttpModule, SecurityRoutes, CommonModule],

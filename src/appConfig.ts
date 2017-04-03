@@ -1,7 +1,6 @@
-import { HttpConnector } from "./modules/common/connector/httpConnector";
 import { UserService } from "./modules/security/_share/services/userService";
 import { AptJournalService } from "./modules/journal/_share/services/aptJournalService";
-import { IoCLifeCycle } from "./modules/common/ioc/ioc";
+import { HttpConnector, IoCLifeCycle } from "src/common";
 import { PatientService } from "./modules/journal/_share/services/PatientService";
 
 let appConfig = {
