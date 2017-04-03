@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 import {IAptJournalService} from "../_share/services/iaptJournalService";
 import aptJournalHelper from "../_share/helpers/aptJournalHelper";
-import appConst from "../_share/const/apiBaseUrl";
+import appConst from "../_share/const/appConstant";
 
 const CONTAINER_ELEMENT = "all_items_container";
 @Component({

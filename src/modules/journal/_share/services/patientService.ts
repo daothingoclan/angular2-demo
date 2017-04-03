@@ -1,7 +1,7 @@
 import { Observable } from "rxjs";
 import { IConnector } from "src/common";
 import { IPatientService } from "./ipatientService";
-import appConst from "../const/apiBaseUrl";
+import appConst from "../const/appConstant";
 
 export class PatientService implements IPatientService {
     public getAllPatients(): Observable<Array<any>> {
