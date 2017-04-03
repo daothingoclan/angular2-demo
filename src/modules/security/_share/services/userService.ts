@@ -1,4 +1,5 @@
-import { IConnector, HttpConnector } from "src/common";
+import { IConnector } from "../../../common/connector/iconnector";
+import { HttpConnector } from "../../../common/connector/httpConnector";
 import { IUserService } from "./iuserService";
 
 export class UserService implements IUserService {

@@ -8,13 +8,7 @@
     "experimentalDecorators": true,
     "removeComments": false,
     "noImplicitAny": true,
-    "suppressImplicitAnyIndexErrors": true,
-    "baseUrl": ".",
-    "paths": {
-      "src/common": [
-        "src/modules/common/index.ts"
-      ]
-    }
+    "suppressImplicitAnyIndexErrors": true
   },
   "exclude": [
     "node_modules",
