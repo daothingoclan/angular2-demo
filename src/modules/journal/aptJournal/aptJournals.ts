@@ -39,11 +39,12 @@ export class AptJournals {
         self.aptJournals = aptJournals;
     }
 
-    public getSize(item: any, index: number) {
-        let size = 300;
-        //var element = document.elem('all_items_container');
-        // element.innerHTML = item.html;
-        // size = element.clientHeight;
-        return size;
+    public getHeightItem(item: any, index: number) {
+        var element = document.getElementById('item_height_container');
+        element.innerHTML = item.html;
+        var height = element.offsetHeight;
+        element.innerHTML = "";
+        console.log(height);
+        return height;
     }
 }
