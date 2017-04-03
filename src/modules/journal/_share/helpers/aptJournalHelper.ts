@@ -4,9 +4,9 @@ let aptJournalHelper = {
 export default aptJournalHelper;
 
 function appJournalToHtml(item: any): string {
-    let headerHtml = String.format("<h4><strong>{0} By {1}</strong></h4>", Date.format(item.start, "dd.mm.yyyy"), item.user.initials);
+    let headerHtml = String.format("<h4><strong>{0} By {1}</strong></h4>", Date.format(item.appointment.start, "dd.mm.yyyy"), item.appointment.userInitials);
     let sectionsHtml = "";
-    var sections = item.journal.data.sections;
+    var sections = item.data.sections;
     for (var k = 0; k < sections.length; k++) {
         sectionsHtml += sectionToHtml(sections[k]);
     }
