@@ -1,16 +1,21 @@
 let aptJournalHelper = {
-    convertDataToHtml: convertDataToHtml
+    appJournalToHtml: appJournalToHtml
 }
 export default aptJournalHelper;
 
-function convertDataToHtml(item: any): string {
-    let html = "<div id='" + item.id + "'>";
-    html += "<h4><strong>" + new Date(item.start).format("dd.mm.yyyy", false) + " By " + item.user.initials + "</strong></h4>";
+function appJournalToHtml(item: any): string {
+    let headerHtml = String.format("<h4><strong>{0} By {1}</strong></h4>", Date.format(item.start, "dd.mm.yyyy"), item.user.initials);
+    let sectionsHtml = "";
     var sections = item.journal.data.sections;
     for (var k = 0; k < sections.length; k++) {
-        html += sectionToHtml(sections[k]);
+        sectionsHtml += sectionToHtml(sections[k]);
     }
-    return html + "</div>";
+    return String.format(
+        "<div id='{0}'>{1}{2}</div>",
+        item.id,
+        headerHtml,
+        sectionsHtml
+    );
 
     function sectionToHtml(section: any) {
         var htmlParagraphs = '';
@@ -37,36 +42,37 @@ function convertDataToHtml(item: any): string {
         for (var j = 0; j < paragraph.inlines.length; j++) {
             inlinesHtml += inlineToHtml(paragraph.inlines[j]);
         }
-        if (inlinesHtml.trim() === '') inlinesHtml = "<br>";
+        if (inlinesHtml.trim() === '') { inlinesHtml = "<br>"; }
         return inlinesHtml;
     }
 
     function inlineToHtml(inline: any) {
+        if (inline.type === "LineBreak") {
+            return '<br>';
+        }
         if (inline.type === "Run") {
             var startTags = '';
             var endTags = '';
 
-            if (inline.text != null && inline.text !== '') {
-                if (inline.textDecoration === 1) {
-                    startTags += String.format('<{0}>', "u");
-                    endTags += String.format('</{0}>', "u");
-                }
-
-                if (inline.fontStyle === 1) {
-                    startTags += String.format('<{0}>', "em");
-                    endTags += String.format('</{0}>', "em");
-                }
-
-                if (inline.fontWeight === 1) {
-                    startTags += String.format('<{0}>', "strong");
-                    endTags += String.format('</{0}>', "strong");
-                }
-
-                return startTags + inline.text + endTags;
+            if (inline.text == null || inline.text == '') {
+                return "";
             }
-            return '';
-        } else if (inline.type === "LineBreak") {
-            return '<br>';
+            if (inline.textDecoration === 1) {
+                startTags += '<u>';
+                endTags += '</u>';
+            }
+
+            if (inline.fontStyle === 1) {
+                startTags += '<em>';
+                endTags += '</em>';
+            }
+
+            if (inline.fontWeight === 1) {
+                startTags += '<strong>';
+                endTags += '</strong>';
+            }
+
+            return startTags + inline.text + endTags;
         }
         return null;
     }

@@ -1,14 +1,16 @@
 import { Component } from "@angular/core";
+import {IAptJournalService} from "../_share/services/iaptJournalService";
 import aptJournalHelper from "../_share/helpers/aptJournalHelper";
 import appConst from "../_share/const/apiBaseUrl";
 
+const CONTAINER_ELEMENT = "all_items_container";
 @Component({
     templateUrl: "src/modules/journal/aptJournal/aptJournals.html",
     inputs: ['aptJournals']
 })
 
 export class AptJournals {
-    public patientId: string;
+    public patientId: any;
     public aptJournals: Array<any>;
     public dateFormat: string = appConst.formatDate;
     private dict: any;
@@ -22,8 +24,8 @@ export class AptJournals {
         return item.size;
     }
 
-    private loadAptJournals(patientId: string) {
-        let iaptJournalService = window.ioc.resolve("IAptJournalService");
+    private loadAptJournals(patientId: any) {
+        let iaptJournalService: IAptJournalService = window.ioc.resolve("IAptJournalService");
         iaptJournalService.getAptsByPatient(patientId).subscribe(
             (aptJournals: Array<any>) => {
                 this.loadAptJournalDone(aptJournals);
@@ -36,7 +38,7 @@ export class AptJournals {
         let allHtmlElements: any = "";
         self.dict = new Object();
         aptJournals.forEach(item => {
-            item.html = aptJournalHelper.convertDataToHtml(item);
+            item.html = aptJournalHelper.appJournalToHtml(item);
             allHtmlElements += item.html;
             self.dict[item.id] = item;
         });
@@ -45,7 +47,7 @@ export class AptJournals {
     }
 
     private calculateItemHeight(allHtmlElements: any, aptJournals: Array<any>) {
-        let element = document.getElementById('all_items_container');
+        let element = document.getElementById(CONTAINER_ELEMENT);
         element.innerHTML = allHtmlElements;
         let height = 0;
 
