@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import {IAptJournalService} from "../_share/services/iaptJournalService";
+import { IAptJournalService } from "../_share/services/iaptJournalService";
 import aptJournalHelper from "../_share/helpers/aptJournalHelper";
 import appConst from "../_share/const/appConstant";
 
@@ -13,8 +13,8 @@ export class AptJournals {
     public patientId: any;
     public aptJournals: Array<any>;
     public dateFormat: string = appConst.formatDate;
-    public isDisabled: any = true;
-  
+    public isLoading: boolean = false;
+
     private dict: any;
 
     public onPatientIdChanged(patientId: any) {
@@ -22,20 +22,21 @@ export class AptJournals {
         this.loadAptJournals(patientId);
     }
 
-    public getItemSize(item: any, index: number) {
-        return item.size;
-    }
-
     private loadAptJournals(patientId: any) {
+        let self = this;
+        self.isLoading = true;
         let iaptJournalService: IAptJournalService = window.ioc.resolve("IAptJournalService");
-        iaptJournalService.getAptsByPatient(patientId).subscribe(
+        let start = new Date();
+        iaptJournalService.getJournalsByPatient(patientId).subscribe(
             (aptJournals: Array<any>) => {
-                this.loadAptJournalDone(aptJournals);
+                console.log("LoadAptJournals: " + (new Date().getTime() - start.getTime()));
+                self.loadAptJournalDone(aptJournals);
             }
         );
     }
 
     private loadAptJournalDone(aptJournals: Array<any>) {
+        let start = new Date();
         let self = this;
         let allHtmlElements: any = "";
         self.dict = new Object();
@@ -46,7 +47,8 @@ export class AptJournals {
         });
         this.calculateItemHeight(allHtmlElements, aptJournals);
         self.aptJournals = aptJournals;
-        this.isDisabled = false;
+        self.isLoading = false;
+        console.log("CalulateItemsHeight: " + (new Date().getTime() - start.getTime()));
     }
 
     private calculateItemHeight(allHtmlElements: any, aptJournals: Array<any>) {

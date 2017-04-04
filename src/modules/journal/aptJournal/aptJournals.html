@@ -1,14 +1,19 @@
 <page>
     <page-header>
-        <patient-navigator (onChange)="onPatientIdChanged($event)" [isDisabled]="isDisabled"></patient-navigator>
+        <patient-navigator (onChange)="onPatientIdChanged($event)" [isDisabled]="isLoading"></patient-navigator>
     </page-header>
     <page-content>
-        <div *vsFor="aptJournals; let _aptJournals = vsCollection; size: getItemSize; autoresize:true;" class="apt-journal">
-            <div *ngFor="let journal of _aptJournals">
-                <div [innerHTML]="journal.html | sanitizeHtml"></div>
-                <br>
+        <div [hidden]="isLoading">
+            <div *vsFor="aptJournals; let _aptJournals = vsCollection; size: size; autoresize:true;" class="apt-journal">
+                <div *ngFor="let journal of _aptJournals">
+                    <div [innerHTML]="journal.html | sanitizeHtml"></div>
+                    <br>
+                </div>
             </div>
+            <div [hidden]="aptJournals != null && aptJournals.length > 0">No Data</div>
         </div>
+        <div [hidden]="!isLoading">Loading...</div>
+
         <div id="all_items_container" style="position: absolute; top: 0px; bottom: 0px; visibility:hidden; background-color: rgba(0, 255, 33, 0.42); overflow-y: scroll; overflow-x: hidden; font-size: 11pt; padding-left: 10px; padding-right: 2px;">
         </div>
     </page-content>
