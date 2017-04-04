@@ -64,5 +64,6 @@ export class AptJournals {
             height += childHeight;
             this.dict[id].size = childHeight;
         }
+        element.innerHTML = "";
     }
 }
