@@ -1,4 +1,4 @@
-# angular2-Journal-demo
+# Angular2-Journal-Demo
 
 ## What we have done:
 * Finish course Angular 2 with hand-on practices ( 5 days).
@@ -16,21 +16,20 @@ First of all, make sure your computer has installed NodeJs. After that, followin
 
 - Step 1: Install dependencies:
 
-    From the root of the repository, run:
+    From the root of the repository, open command line and run:
 
-    *   Install Typings global -> $npm install typings -g
+    *   Install Typings global -> npm install typings -g
 
-    *   Install Typescript global -> $npm install typescript -g 
+    *   Install Typescript global -> npm install typescript -g 
 
-    *   Install Typescript Compiler global -> $npm install tsc -g
+    *   Install Lite-server global - > npm install lite-server -g
 
-    *   Install Lite-server global - > $npm install lite-server -g
-
-    *   Install all dependencies for project -> $npm install
+    *   Install all dependencies for project -> npm install
 
 - Step 2: Run project
 
-    * Run $npm start
+    * Run -> tsc
+    * Run -> npm run lite
 
 ## API
     - API at [Orient Software API server](http://aspit.orientsoftware.net)
