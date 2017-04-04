@@ -33,7 +33,7 @@ First of all, make sure your computer has installed NodeJs. After that, followin
     * Run $npm start
 
 ## API
-    - API at **http://aspit.orientsoftware.net**. 
+    - API at [Orient Software API server](http://aspit.orientsoftware.net)
     - We can modify it at: src\modules\journal\_share\const\apiBaseUrl.ts
   
 # Performance comparison on patient 95:
