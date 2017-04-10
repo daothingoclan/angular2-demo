@@ -3,7 +3,7 @@ import { IPatientService } from "../../../journal/_share/services/iPatientServic
 
 @Component({
     selector: "patient-navigator",
-    templateUrl: 'src/modules/journal/_share/components/patientNavigator.html'
+    templateUrl: 'dist/modules/journal/_share/components/patientNavigator.html'
 })
 
 export class PatientNavigator {

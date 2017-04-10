@@ -24,7 +24,7 @@
   },
   "homepage": "tranthanhtu.vn",
   "license": "ISC",
-  "devDependencies": {
+  "dependencies": {
     "@angular/common": "^2.4.1",
     "@angular/compiler": "^2.4.1",
     "@angular/core": "^2.4.1",
@@ -35,17 +35,28 @@
     "@angular/router": "^3.4.1",
     "@angular/upgrade": "^2.4.1",
     "core-js": "^2.4.1",
-    "lite-server": "^2.3.0",
     "reflect-metadata": "^0.1.9",
     "rxjs": "^5.0.2",
     "systemjs": "^0.19.41",
-    "ts": "0.0.0",
-    "typescript": "^1.5.0-beta",
     "zone": "^0.3.4",
     "zone.js": "^0.7.4"
   },
-  "dependencies": {
+  "devDependencies": {
+    "browser-sync": "^2.18.8",
     "concurrently": "^3.2.0",
-    "ng2-vs-for": "^1.1.1"
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-if": "^2.0.2",
+    "gulp-sourcemaps": "^2.5.1",
+    "gulp-tslint": "^7.1.0",
+    "gulp-typescript": "^3.1.6",
+    "gulp-uglify": "^2.1.2",
+    "gulp-useref": "^3.1.2",
+    "lite-server": "^2.3.0",
+    "ng2-vs-for": "^1.1.1",
+    "run-sequence": "^1.2.2",
+    "tslint": "^5.0.0",
+    "typescript": "^2.3.0-dev.20170404"
   }
 }

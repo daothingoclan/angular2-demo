@@ -1,4 +1,4 @@
-import { Observable } from "rxjs";
+import { Observable } from "rxjs/observable";
 import { IConnector } from "src/common";
 import { IAptJournalService } from "./iAptJournalService";
 import appConst from "../const/appConstant";

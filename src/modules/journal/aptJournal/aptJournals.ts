@@ -5,7 +5,7 @@ import appConst from "../_share/const/appConstant";
 
 const CONTAINER_ELEMENT = "all_items_container";
 @Component({
-    templateUrl: "src/modules/journal/aptJournal/aptJournals.html",
+    templateUrl: "dist/modules/journal/aptJournal/aptJournals.html",
     inputs: ['aptJournals']
 })
 

@@ -1,5 +1,6 @@
 import { IoCFactory } from "./ioc";
-import { Observable } from "rxjs";
+import { Observable } from "rxjs/observable";
+import "rxjs/add/observable/from"
 
 let iocHelper = {
     config: config

@@ -1,5 +1,5 @@
 import { IConnector } from "./iconnector";
-import { Observable } from "rxjs";
+import { Observable } from "rxjs/observable";
 import { Http, Response } from "@angular/http";
 import "rxjs/add/operator/map";
 

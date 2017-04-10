@@ -1,4 +1,4 @@
-import { Observable } from "rxjs";
+import { Observable } from "rxjs/observable";
 import { IConnector } from "src/common";
 import { IPatientService } from "./ipatientService";
 import appConst from "../const/appConstant";

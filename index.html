@@ -9,28 +9,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Gentelella Alela! | </title>
+    <title>Angular 2 Demo | </title>
 
+    <!-- build:css cssBundle.css -->
     <!-- Bootstrap -->
     <link href="resources/theme/default/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link href="resources/theme/default/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <!-- NProgress -->
-    <link href="resources/theme/default/vendors/nprogress/nprogress.css" rel="stylesheet">
-    <!-- iCheck -->
-    <link href="resources/theme/default/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
-
-    <!-- bootstrap-progressbar -->
-    <link href="resources/theme/default/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
-    <!-- JQVMap -->
-    <link href="resources/theme/default/vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet" />
-    <!-- bootstrap-daterangepicker -->
-    <link href="resources/theme/default/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
-
     <!-- Custom Theme Style -->
     <link href="resources/theme/default/build/css/custom.min.css" rel="stylesheet">
-
+    <!-- App Style -->
     <link href="resources/css/main.css" rel="stylesheet">
+    <!--endbuild-->
 </head>
 
 <body class="nav-md">
@@ -44,44 +34,11 @@
         </div>
     </div>
 
+    <!-- build:js jsBundle.js -->
     <!-- jQuery -->
     <script src="resources/theme/default/vendors/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap -->
     <script src="resources/theme/default/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
-    <!-- FastClick -->
-    <script src="resources/theme/default/vendors/fastclick/lib/fastclick.js"></script>
-    <!-- NProgress -->
-    <script src="resources/theme/default/vendors/nprogress/nprogress.js"></script>
-    <!-- Chart.js -->
-    <script src="resources/theme/default/vendors/Chart.js/dist/Chart.min.js"></script>
-    <!-- gauge.js -->
-    <script src="resources/theme/default/vendors/gauge.js/dist/gauge.min.js"></script>
-    <!-- bootstrap-progressbar -->
-    <script src="resources/theme/default/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
-    <!-- iCheck -->
-    <script src="resources/theme/default/vendors/iCheck/icheck.min.js"></script>
-    <!-- Skycons -->
-    <script src="resources/theme/default/vendors/skycons/skycons.js"></script>
-    <!-- Flot -->
-    <script src="resources/theme/default/vendors/Flot/jquery.flot.js"></script>
-    <script src="resources/theme/default/vendors/Flot/jquery.flot.pie.js"></script>
-    <script src="resources/theme/default/vendors/Flot/jquery.flot.time.js"></script>
-    <script src="resources/theme/default/vendors/Flot/jquery.flot.stack.js"></script>
-    <script src="resources/theme/default/vendors/Flot/jquery.flot.resize.js"></script>
-    <!-- Flot plugins -->
-    <script src="resources/theme/default/vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
-    <script src="resources/theme/default/vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
-    <script src="resources/theme/default/vendors/flot.curvedlines/curvedLines.js"></script>
-    <!-- DateJS -->
-    <script src="resources/theme/default/vendors/DateJS/build/date.js"></script>
-    <!-- JQVMap -->
-    <script src="resources/theme/default/vendors/jqvmap/dist/jquery.vmap.js"></script>
-    <script src="resources/theme/default/vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
-    <script src="resources/theme/default/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
-    <!-- bootstrap-daterangepicker -->
-    <script src="resources/theme/default/vendors/moment/min/moment.min.js"></script>
-    <script src="resources/theme/default/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
-
     <!-- Custom Theme Scripts -->
     <script src="resources/theme/default/build/js/custom.min.js"></script>
 
@@ -89,12 +46,12 @@
     <script src="node_modules/zone.js/dist/zone.js"></script>
     <script src="node_modules/reflect-metadata/reflect.js"></script>
     <script src="node_modules/systemjs/dist/system.src.js"></script>
-    <script>
-        window.autoBootstrap = false;
-    </script>
     <script src="systemjs.config.js"></script>
     <script src="resources/js/jsextension.js"></script>
+    <!-- endbuild -->
+
     <script>
+        window.autoBootstrap = false;
         System.import("src/main").catch(function (error) { console.log(error); });
     </script>
 </body>

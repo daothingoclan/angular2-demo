@@ -6,7 +6,7 @@
             npm: "node_modules/"
         },
         map: {
-            "src": "src",
+            "src": "dist",
             "@angular/core": 'npm@angular/core/bundles/core.umd.js',
             '@angular/common': 'npm@angular/common/bundles/common.umd.js',
             '@angular/compiler': 'npm@angular/compiler/bundles/compiler.umd.js',
@@ -19,16 +19,16 @@
             /*'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js',*/
             'ts': 'npm@plugin-typescript@4.0.10/lib/plugin.js',
             'typescript': 'npm@typescript@2.0.3/lib/typescript.js',
-
-            'src/common': 'src/modules/common/index.js'
+            'src/common': 'dist/modules/common/index.js'
         },
         packages: {
-            src: {
+            dist: {
                 main: "./main.ts",
                 defaultExtension: "js"
-            },
+            }
+            ,
             rxjs: {
-                main: "./rx.js",
+                main: "./bundles/rx.min.js",
                 defaultExtension: "js"
             }
         }
